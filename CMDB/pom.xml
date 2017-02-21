@@ -1,0 +1,45 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>club.zhcs</groupId>
+	<artifactId>cmdb</artifactId>
+	<version>1.0</version>
+	<packaging>pom</packaging>
+	<name>CMDB</name>
+	<description>NUTZ 实现的配置管理服务</description>
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	<modules>
+		<module>cmdb-core</module>
+		<module>cmdb-rest</module>
+		<module>cmdb-ui</module>
+		<module>cmdb-webapp</module>
+	</modules>
+	<repositories>
+		<repository>
+			<id>jfrog-snapshots</id>
+			<name>NUTZ Snapshots</name>
+			<url>https://jfrog.nutz.cn/artifactory/snapshots/</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>jfrog-releases</id>
+			<name>NUTZ Releases</name>
+			<url>https://jfrog.nutz.cn/artifactory/jcenter/</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+</project>
