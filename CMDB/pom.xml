@@ -2,10 +2,10 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>club.zhcs</groupId>
-	<artifactId>cmdb</artifactId>
+	<artifactId>cm</artifactId>
 	<version>1.0</version>
 	<packaging>pom</packaging>
-	<name>CMDB</name>
+	<name>CM</name>
 	<description>NUTZ 实现的配置管理服务</description>
 	<build>
 		<plugins>
@@ -19,10 +19,10 @@
 		</plugins>
 	</build>
 	<modules>
-		<module>cmdb-core</module>
-		<module>cmdb-rest</module>
-		<module>cmdb-ui</module>
-		<module>cmdb-webapp</module>
+		<module>cm-core</module>
+		<module>cm-rest</module>
+		<module>cm-ui</module>
+		<module>cm-webapp</module>
 	</modules>
 	<repositories>
 		<repository>
