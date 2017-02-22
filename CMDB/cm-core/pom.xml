@@ -11,13 +11,13 @@
 	<description>配置中心核心</description>
 	<build />
 	<properties>
-		<nutz.plugins.version>1.r.60</nutz.plugins.version>
+		<nutz.plugins.version>1.r.60.r2</nutz.plugins.version>
 	</properties>
 	<dependencies>
 		<dependency>
 			<groupId>org.nutz</groupId>
 			<artifactId>nutz-web</artifactId>
-			<version>${nutz.plugins.version}</version>
+			<version>1.r.60</version>
 		</dependency>
 		<dependency>
 			<groupId>org.nutz</groupId>

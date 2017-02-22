@@ -29,5 +29,10 @@
   		<artifactId>cm-ui</artifactId>
   		<version>${project.version}</version>
   	</dependency>
+  	<dependency>
+  		<groupId>club.zhcs</groupId>
+  		<artifactId>cm-rest</artifactId>
+  		<version>${project.version}</version>
+  	</dependency>
   </dependencies>
 </project>

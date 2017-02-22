@@ -26,19 +26,10 @@
 	</modules>
 	<repositories>
 		<repository>
-			<id>jfrog-snapshots</id>
-			<name>NUTZ Snapshots</name>
-			<url>https://jfrog.nutz.cn/artifactory/snapshots/</url>
+			<id>*</id>
+			<url>http://maven.aliyun.com/nexus/content/groups/public/</url>
 			<snapshots>
 				<enabled>true</enabled>
-			</snapshots>
-		</repository>
-		<repository>
-			<id>jfrog-releases</id>
-			<name>NUTZ Releases</name>
-			<url>https://jfrog.nutz.cn/artifactory/jcenter/</url>
-			<snapshots>
-				<enabled>false</enabled>
 			</snapshots>
 		</repository>
 	</repositories>
