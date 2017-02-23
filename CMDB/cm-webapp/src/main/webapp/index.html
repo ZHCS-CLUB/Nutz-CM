@@ -8,14 +8,14 @@
     <meta name="description" content="Examples for creative website header animations using Canvas and JavaScript" />
     <meta name="keywords" content="header, canvas, animated, creative, inspiration, javascript" />
     <meta name="author" content="Codrops" />
-    <link rel="stylesheet" type="text/css" href="http://unpkg.com/iview/dist/styles/iview.css">
+    <link rel="stylesheet" type="text/css" href="./styles/iview.css">
     <script type="text/javascript" src="http://v1.vuejs.org/js/vue.min.js"></script>
-    <script type="text/javascript" src="http://unpkg.com/iview/dist/iview.min.js"></script>
+    <script type="text/javascript" src="./iview.js"></script>
     <link rel="stylesheet" type="text/css" href="css/component.css" />
     <style type="text/css">
-    	.hander{
-    		cursor: pointer;
-    	}
+        .hander {
+            cursor: pointer;
+        }
     </style>
     <!--[if IE]>
         	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -30,7 +30,33 @@
                 <h1 class="main-title">
                     <span class="hander" @click="show"> Nutz CM</span>
                 </h1>
-                <Modal :visible.sync="visible" title="登录">欢迎使用 iView</Modal>
+                <Modal :visible.sync="visible" title="对话框标题" :loading="loading" @on-ok="asyncOK">
+                    <template>
+						<Row>
+							<i-col span="18" offset="3">
+                                <i-input size="large">
+                                    <span slot="prepend">用户</span>
+                                </i-input>
+                            </i-col>
+						</Row>
+						<br>
+						<Row>
+							<i-col span="18" offset="3">
+								<i-input size="large">
+                                    <span slot="prepend">密码</span>
+                                </i-input>
+							</i-col>
+						</Row>
+						<br>
+						<Row>
+							<i-col span="18" offset="3">
+								<i-input size="large">
+                                    <span slot="append"><img class="hander" title="点击刷新验证码" @click="refresh" src="{{'./captcha?' + r}}" style="height: 20px"></span>
+                                </i-input>
+							</i-col>
+						</Row>
+				</template>
+                </Modal>
             </div>
         </div>
     </div>
@@ -43,11 +69,21 @@
         var app = new Vue({
             el: '#app',
             data: {
-                visible: false
+                visible: false,
+                r: Math.random(),
+                loading: true
             },
             methods: {
-                show: function() {
+                show() {
                     this.visible = true;
+                },
+                refresh() {
+                    this.r = Math.random();
+                },
+                asyncOK() {
+                    setTimeout(() => {
+                        this.visible = false;
+                    }, 2000);
                 }
             }
         })
