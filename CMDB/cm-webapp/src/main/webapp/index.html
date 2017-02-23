@@ -1,17 +1,57 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en" class="no-js">
 
 <head>
-    <title>cm-ui</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
-    <link rel="stylesheet" href="dist/main.47513d77f00dde569ef7.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Nutz CM</title>
+    <meta name="description" content="Examples for creative website header animations using Canvas and JavaScript" />
+    <meta name="keywords" content="header, canvas, animated, creative, inspiration, javascript" />
+    <meta name="author" content="Codrops" />
+    <link rel="stylesheet" type="text/css" href="http://unpkg.com/iview/dist/styles/iview.css">
+    <script type="text/javascript" src="http://v1.vuejs.org/js/vue.min.js"></script>
+    <script type="text/javascript" src="http://unpkg.com/iview/dist/iview.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/component.css" />
+    <style type="text/css">
+    	.hander{
+    		cursor: pointer;
+    	}
+    </style>
+    <!--[if IE]>
+        	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
 </head>
 
-<body>
-    <div id="app"></div>
-    <script type="text/javascript" src="dist/vendors.47513d77f00dde569ef7.js"></script>
-    <script type="text/javascript" src="dist/main.47513d77f00dde569ef7.js"></script>
+<body id="app">
+    <div class="container">
+        <div class="content">
+            <div id="large-header" class="large-header">
+                <canvas id="demo-canvas"></canvas>
+                <h1 class="main-title">
+                    <span class="hander" @click="show"> Nutz CM</span>
+                </h1>
+                <Modal :visible.sync="visible" title="登录">欢迎使用 iView</Modal>
+            </div>
+        </div>
+    </div>
+    <!-- /container -->
+    <div style="position:fixed;height:90px;width:100%;left:0;bottom:5px;z-index:999">
+        <div class="footer-banner" style="width:728px; margin:0px auto"></div>
+    </div>
+    <script src="js/can.js"></script>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                visible: false
+            },
+            methods: {
+                show: function() {
+                    this.visible = true;
+                }
+            }
+        })
+    </script>
 </body>
 
 </html>
