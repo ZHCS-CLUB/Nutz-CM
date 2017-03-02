@@ -41,5 +41,9 @@ public class MainModule extends AbstractBaseModule {
 	public View captcha(@Param(value = "length", df = "5") int length) {
 		return new JPEGView(null, length);
 	}
+	
+	public static void main(String[] args) {
+		
+	}
 
 }

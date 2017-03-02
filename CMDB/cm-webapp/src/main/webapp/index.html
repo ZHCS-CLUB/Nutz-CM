@@ -10,6 +10,7 @@
     <meta name="author" content="Codrops" />
     <link rel="stylesheet" type="text/css" href="./styles/iview.css">
     <script type="text/javascript" src="http://v1.vuejs.org/js/vue.min.js"></script>
+    <script type="text/javascript" src="webjars/vue-resource/0.9.3/vue-resource.min.js"></script>
     <script type="text/javascript" src="./iview.js"></script>
     <link rel="stylesheet" type="text/css" href="css/component.css" />
     <style type="text/css">
@@ -30,11 +31,11 @@
                 <h1 class="main-title">
                     <span class="hander" @click="show"> Nutz CM</span>
                 </h1>
-                <Modal :visible.sync="visible" title="对话框标题" :loading="loading" @on-ok="asyncOK">
+                <Modal :visible.sync="visible" title="登录" :loading="loading" @on-ok="asyncOK">
                     <template>
 						<Row>
 							<i-col span="18" offset="3">
-                                <i-input size="large">
+                                <i-input size="large" placeholder="请输入用户名...">
                                     <span slot="prepend">用户</span>
                                 </i-input>
                             </i-col>
@@ -42,7 +43,7 @@
 						<br>
 						<Row>
 							<i-col span="18" offset="3">
-								<i-input size="large">
+								<i-input size="large" placeholder="请输入密码..." type="password">
                                     <span slot="prepend">密码</span>
                                 </i-input>
 							</i-col>
@@ -50,7 +51,7 @@
 						<br>
 						<Row>
 							<i-col span="18" offset="3">
-								<i-input size="large">
+								<i-input size="large" placeholder="请输入验证码内容...">
                                     <span slot="append"><img class="hander" title="点击刷新验证码" @click="refresh" src="{{'./captcha?' + r}}" style="height: 20px"></span>
                                 </i-input>
 							</i-col>
@@ -81,9 +82,12 @@
                     this.r = Math.random();
                 },
                 asyncOK() {
-                    setTimeout(() => {
+                    this.$http.get("_/exp").then(function(resp) {
+                        console.log(resp);
                         this.visible = false;
-                    }, 2000);
+                    }, function(resp) {
+                        console.log(resp);
+                    })
                 }
             }
         })
